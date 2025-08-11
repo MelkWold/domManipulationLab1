@@ -1,4 +1,4 @@
-// ========================= DOM Manipulation (Part One) ============================
+// ================================ DOM Manipulation (Part One) ======================================
 
 // Menu data structure
 var menuLinks = [
@@ -8,7 +8,7 @@ var menuLinks = [
     { text: 'account', href: '/account' },
     ];
 
-// ==================== Part 1: Getting Started ====================================
+// =============================== Part 1: Getting Started ===========================================
 // Select and cache the <main> element in a variable named mainEl.
 let mainEl = document.querySelector("main");
 console.log(mainEl);
@@ -22,12 +22,15 @@ const headingEl = document.createElement("h1");
 headingEl.textContent = "DOM Manipulation";
 mainEl.appendChild(headingEl);
 
+// Dylan's approach
+// mainEl.innerHTML = <h1>DOM Manipulation</h1>;
+
 // Add a class of flex-ctr to mainEl.
 // Hint: Use the Element.classList API.
 mainEl.classList.add("flex-ctr");
 
 
-// =========================== Part 2: Creating a Menu Bar ==========================
+// =============================== Part 2: Creating a Menu Bar =======================================
 // Select and cache the <nav id="top-menu"> element in a variable named topMenuEl.
 let topMenuEl = document.getElementById("top-menu");
 console.log(topMenuEl)
@@ -40,7 +43,7 @@ topMenuEl.style.backgroundColor = "var(--top-menu-bg";
 // Add a class of flex-around to topMenuEl.
 topMenuEl.classList.add("flex-around");
 
-// =========================== Part 3: Adding Menu Buttons =========================
+// ============================== Part 3: Adding Menu Buttons ========================================
 // Iterate over the entire menuLinks array and for each "link" object:
 // Create an <a> element.
 
@@ -50,24 +53,30 @@ topMenuEl.classList.add("flex-around");
 
 // Append the new element to the topMenuEl element.
 
-for (i = 0; i < menuLinks.length; i++) {
-    newEl = document.createElement("a");
-    newEl.classList.add("href");
-    newEl.href = menuLinks[i].href;
-    topMenuEl.prepend(newEl);
-    console.log(newEl);
+for ( let i = 0; i < menuLinks.length; i++) {
+    let a = document.createElement("a");
+    a.classList.add("href");
+    a.href = menuLinks[i].href;
+    topMenuEl.attendChild(a);
+    console.log(a);
     console.log(menuLinks)
 };
 
-
 // Question:
-// Why is it that I didn't see the menu items on top menu eventhough I have added newEL 
+// Why is it that I didn't see the menu items on top menu eventhough I have added newEL. 
+
+// Dylans's approach
+// for (let link of menuLinks) {
+//     let menuButton = document.createElement("a");
+//     menuButton.setAttribute("href", link.href);
+//     menuButton.textContent = link.text;
+//     topMenuEl.appendChild(menuButton);
+// }
 
 
 
 
-
-// ===================== Part 4: Adding Interactivity =============================
+// ====================== Part 4: Adding Interactivity ========================================
 // With the basic structure of the page now generated purely with JavaScript, we have demonstrated the ability to manipulate the DOM in several fundamental ways.
 // In order to continue with this project, we must first explore how to add user interaction to DOM elements, which will be covered in a future lesson. For now, save your work so that you can return to it for Part Two of this lab activity.
 // Remember to submit the link to this part of the project to Canvas using the submission instructions at the beginning of this document.
