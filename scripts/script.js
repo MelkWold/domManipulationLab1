@@ -138,13 +138,33 @@ console.log(topMenuLinks)
     // The second line of code of the function should immediately return if the element clicked was not an <a> element.
     // Log the content of the <a> to verify the handler is working.
 
+// Now that we have references to each of these links, and a registered event listener, we will want to add a toggled "active" state to each menu item, showing whether or not it is currently selected:
+
+// 1. The event listener should add the active class to the <a> element that was clicked, unless it was already active, in which case it should remove it.
+
+// 2.The event listener should remove the active class from each other <a> element in topMenuLinks - whether the active class exists or not.
+
+// Hint: Removing a non-existent class from an element does not cause an error!
+
+// Done!
+
 function handleClick (event) {
     event.preventDefault();
         if (!event.target === topMenuLinks) {
             return }
         else {
             console.log(event.target);
+            event.target.classList.toggle("active");
 }  
 };
 
 topMenuEl.addEventListener("click", handleClick) 
+
+// Now that we have references to each of these links, and a registered event listener, we will want to add a toggled "active" state to each menu item, showing whether or not it is currently selected:
+
+// 1. The event listener should add the active class to the <a> element that was clicked, unless it was already active, in which case it should remove it.
+
+// 2.The event listener should remove the active class from each other <a> element in topMenuLinks - whether the active class exists or not.
+
+// Hint: Removing a non-existent class from an element does not cause an error!
+
