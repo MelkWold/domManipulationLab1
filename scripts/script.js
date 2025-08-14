@@ -123,3 +123,28 @@ subMenuEl.style.top = "0";
 // ================ Part 4: Adding Menu Interaction =======================
 // Update the menuLinks array
     // Done!
+
+// Select and cache the all of the <a> elements inside of topMenuEl in a variable named topMenuLinks which gives us an HTMLCollection with all the anchors.
+let topMenuLinks = document.getElementsByTagName("a")
+console.log(topMenuLinks)
+
+// Another way of doing this is using querySelectorAll which gives us a NodeList with all the anchors. Which one is better?
+
+// let topMenuLinks = document.querySelectorAll("a")
+// console.log(topMenuLinks)
+
+// Attach a delegated 'click' event listener to topMenuEl.
+    // The first line of code of the event listener function should call the event object's preventDefault() method.
+    // The second line of code of the function should immediately return if the element clicked was not an <a> element.
+    // Log the content of the <a> to verify the handler is working.
+
+function handleClick (event) {
+    event.preventDefault();
+        if (!event.target === topMenuLinks) {
+            return }
+        else {
+            console.log(event.target);
+}  
+};
+
+topMenuEl.addEventListener("click", handleClick) 
